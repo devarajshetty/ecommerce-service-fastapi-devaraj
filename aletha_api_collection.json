@@ -1,0 +1,325 @@
+type: collection.insomnia.rest/5.0
+name: aletha-ecommerce
+meta:
+  id: wrk_ee6f5990ab9d41b9ac41b6dad923efb3
+  created: 1755437910967
+  modified: 1755460086628
+  description: ""
+collection:
+  - url: http://127.0.0.1:8000/auth/login
+    name: admin-token
+    meta:
+      id: req_4590b6df963a4b7cbf872d5f4b88933e
+      created: 1755437911036
+      modified: 1755439354191
+      isPrivate: false
+      description: ""
+      sortKey: -1755437911036
+    method: POST
+    body:
+      mimeType: application/json
+      text: '{"username":"admin1","role":"admin"}'
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.4.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/products?page=1&size=2
+    name: products-list
+    meta:
+      id: req_6e10a66468234073878e02eb4cea861b
+      created: 1755438251325
+      modified: 1755456074829
+      isPrivate: false
+      description: ""
+      sortKey: -1755438251325
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.4.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTU0NTYwNjMsImV4cCI6MTc1NTQ1Nzg2M30.0VZCyjY2lyEDWTW3_m1FNx4zwR-QL2w70jNvZ4fk7mo
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/products/4
+    name: products-update
+    meta:
+      id: req_ea3ea3d4556049e2b7c333859422c7d7
+      created: 1755438895856
+      modified: 1755439379617
+      isPrivate: false
+      description: ""
+      sortKey: -1755438895856
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        			"sku": "testds",
+        			"name": "test gf",
+        			"price": "30.00"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.4.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTU0MzkwNjgsImV4cCI6MTc1NTQzOTk2OH0.NYMYt53TuqCgACDU9_GLr_u42dJnn_kD5aiUgBdiwTg
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/products/4
+    name: products-delete
+    meta:
+      id: req_82f81fcea3f54364ad3316245d540321
+      created: 1755438913920
+      modified: 1755439383863
+      isPrivate: false
+      description: ""
+      sortKey: -1755438913920
+    method: DELETE
+    body:
+      mimeType: application/json
+      text: ""
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.4.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTU0MzkwNjgsImV4cCI6MTc1NTQzOTk2OH0.NYMYt53TuqCgACDU9_GLr_u42dJnn_kD5aiUgBdiwTg
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/products
+    name: products-create
+    meta:
+      id: req_c0ff04bbaab54b95a4c2709fcf926a80
+      created: 1755438959383
+      modified: 1755439391347
+      isPrivate: false
+      description: ""
+      sortKey: -1755438959383
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        			"sku": "test",
+        			"name": "test gf",
+        			"price": "30.00"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.4.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTU0MzkwNjgsImV4cCI6MTc1NTQzOTk2OH0.NYMYt53TuqCgACDU9_GLr_u42dJnn_kD5aiUgBdiwTg
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/cart/items
+    name: cart-add
+    meta:
+      id: req_3ec538ffbd8e4cb3b8e5e288e2d830fd
+      created: 1755439216922
+      modified: 1755440266942
+      isPrivate: false
+      description: ""
+      sortKey: -1755439216922
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"sku": "orbit-10",
+        	"qty": 2
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.4.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbjEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1NTQzOTQyNCwiZXhwIjoxNzU1NDQwMzI0fQ.EaXE2qDgsumdZp5JxMi2p3jB3-kBbnvG9hQytxt4ke8
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/auth/login
+    name: user-token
+    meta:
+      id: req_e6247588280644388316627217d16cef
+      created: 1755439363117
+      modified: 1755439422132
+      isPrivate: false
+      description: ""
+      sortKey: -1755437910986
+    method: POST
+    body:
+      mimeType: application/json
+      text: '{"username":"admin1","role":"user"}'
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.4.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/cart
+    name: cart-list
+    meta:
+      id: req_106e5c0264ee4eb38982b1a6b835bf39
+      created: 1755439443428
+      modified: 1755441369583
+      isPrivate: false
+      description: ""
+      sortKey: -1755439088152.5
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"sku": "care-1",
+        	"qty": 2
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.4.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbjEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1NTQ0MTM2MCwiZXhwIjoxNzU1NDQyMjYwfQ.6NYSkUCsV3Jw5jTu9TlD4VsWbsoxrqHzEK9_MtisDP0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/cart/items/care-1
+    name: cart-update
+    meta:
+      id: req_a222d54542714192a7e3c33ca6d16db4
+      created: 1755439849055
+      modified: 1755440146051
+      isPrivate: false
+      description: ""
+      sortKey: -1755439152537.25
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"qty": 3
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.4.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbjEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1NTQzOTQyNCwiZXhwIjoxNzU1NDQwMzI0fQ.EaXE2qDgsumdZp5JxMi2p3jB3-kBbnvG9hQytxt4ke8
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/cart/items/orbit-10
+    name: cart-delete
+    meta:
+      id: req_be59adcc067e411da5e34344f0f1e76d
+      created: 1755440333330
+      modified: 1755440379949
+      isPrivate: false
+      description: ""
+      sortKey: -1755439184729.625
+    method: DELETE
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"sku": "orbit-10",
+        	"qty": 2
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.4.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbjEiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1NTQ0MDM2NywiZXhwIjoxNzU1NDQxMjY3fQ.MaGoq2giNcNUS8crkhMlAaFXMXsOAW_BMvYrBZRNhn8
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_e44ea60cdfb1827be6f62f7aa95485a1e51b1be3
+    created: 1755437910971
+    modified: 1755437910971
+environments:
+  name: Base Environment
+  meta:
+    id: env_e44ea60cdfb1827be6f62f7aa95485a1e51b1be3
+    created: 1755437910969
+    modified: 1755437910969
+    isPrivate: false
