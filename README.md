@@ -17,6 +17,24 @@ Used FastAPI app with Products , user based cart and authenticated using JWT aut
 ## API Collection
 - Collectionn exported in the file name of "aletha_api_collection.json" and placed in root folder
 
+## Steps to get auth token to use in API headers
+    this api desined to get auth token using username and role
+    Endpoint:
+    `POST /auth/login`
+    request payload:
+    {"username":"admin1","role":"admin"}
+
+
+## To use auth tokens:
+        Authorization: Bearer <access_token>
+        In postman or any api testing tools, we can use this after selecting 
+        auth type as "Bearer token"
+
+## Shortcuts & Assumptions
+- Role based login (so no password required)
+
+## Environment Variables are
+`.env.example` for: `DATABASE_URL`, `JWT_SECRET`, `ACCESS_TOKEN_EXPIRE_MINUTES`
 
 ## TO run this project please run these below commands one by one
     ```
@@ -35,22 +53,3 @@ Used FastAPI app with Products , user based cart and authenticated using JWT aut
     to run unit test:
     pytest -s
 ```
-
-## Steps to get auth token to use in API headers
-    this api desined to get auth token using username and role
-    Endpoint:
-    `POST /auth/login`
-    request payload:
-    {"username":"admin1","role":"admin"}
-
-
-## To use auth tokens:
-Authorization: Bearer <access_token>
-In postman or any api testing tools, we can use this after selecting 
-auth type as "Bearer token"
-
-## Shortcuts & Assumptions
-- Role based login (so no password required)
-
-## Environment Variables are
-`.env.example` for: `DATABASE_URL`, `JWT_SECRET`, `ACCESS_TOKEN_EXPIRE_MINUTES`
